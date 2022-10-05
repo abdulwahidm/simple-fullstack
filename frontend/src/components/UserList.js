@@ -17,7 +17,7 @@ const UserList = () => {
   return (
     <div className="columns mt-5 is-centered">
         <div className="column is-half">
-            <table className="table is-fluidwidth">
+            <table className="table is-striped is-fluidwidth">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -35,7 +35,7 @@ const UserList = () => {
                         <td>{user.email}</td>
                         <td>{user.gender}</td>
                         <td>
-                            <button className="button is-small is-info">Edit</button>
+                            <button className="button is-small is-info mr-2">Edit</button>
                             <button className="button is-small is-danger">Delete</button>
                         </td>
                     </tr>
