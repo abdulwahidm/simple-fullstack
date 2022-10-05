@@ -1,12 +1,17 @@
-// import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UserList from './components/UserList';
+import AddUSer from './components/AddUser';
 
-function App () {
+const App = () => {
   return (
-    <div>
-      <UserList/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' component={UserList} />
+        <Route exact path='/add' component={AddUSer} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 

@@ -6,19 +6,19 @@ const AddUSer = () => {
         <div className="column is-half">
             <form action="">
                 <div className="field">
-                    <label className= "label">Name</label>
+                    <label className="label">Name</label>
                     <div className="control">
                         <input type="text" className="input" placeholder='Name'/>
                     </div>
                 </div>
                 <div className="field">
-                    <label className= "label">Email</label>
+                    <label className="label">Email</label>
                     <div className="control">
                         <input type="text" className="input" placeholder='Email'/>
                     </div>
                 </div>
                 <div className="field">
-                    <label className= "label">Gender</label>
+                    <label className="label">Gender</label>
                     <div className="control">
                         <div className="select is-fullwidth">
                             <select >
@@ -29,7 +29,7 @@ const AddUSer = () => {
                     </div>
                 </div>
                 <div className="field">
-                    <button type='submit' className='button is-succes'>
+                    <button type='submit' className='button is-success'>
                         Save
                     </button>
  

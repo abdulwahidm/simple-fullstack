@@ -17,7 +17,7 @@ const UserList = () => {
   return (
     <div className="columns mt-5 is-centered">
         <div className="column is-half">
-            <table className="table is-fluidwith">
+            <table className="table is-fluidwidth">
                 <thead>
                     <tr>
                         <th>No</th>
