@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+// import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import React from 'react';
+import UserList from './components/UserList';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-          Ini adalah Component yang dijadikan percobaan.
-      </div>
-    );
-  }
+function App () {
+  return (
+    <div>
+      <UserList/>
+    </div>
+  );
 }
 
 export default App;
+
