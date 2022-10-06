@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const UserList = () => { 
     const [users, setUser] = useState([]);
@@ -9,14 +10,26 @@ const UserList = () => {
         setUser(response.data);
     }
 
+    const deleteUser = async (id) => {
+        try {
+            await axios.delete(`http://localhost:5000/users/${id}`);
+            getUsers();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     useEffect(() => {
         getUsers();
     }, []);
 
 
   return (
-    <div className="columns mt-5 is-centered">
-        <div className="column is-half">
+    <div className="columns ml-5 mt-5 is-centered">
+        <div className="column">
+            <Link to={'add'} className="button mb-6 is-success"> 
+                Add New
+            </Link>
             <table className="table is-striped is-fluidwidth">
                 <thead>
                     <tr>
@@ -35,8 +48,15 @@ const UserList = () => {
                         <td>{user.email}</td>
                         <td>{user.gender}</td>
                         <td>
-                            <button className="button is-small is-info mr-2">Edit</button>
-                            <button className="button is-small is-danger">Delete</button>
+                            <Link to={`edit/${user.id}`}>
+                                <button className="button is-small is-info">Edit</button>
+                            </Link>
+                            <button 
+                                onClick={() => deleteUser(user.id)} 
+                                className="button is-small is-danger"
+                            >
+                                Delete
+                            </button>
                         </td>
                     </tr>
                     ))}
@@ -44,7 +64,7 @@ const UserList = () => {
             </table>   
         </div>
     </div>
-  )
+  );
 }
 
 export default UserList;
